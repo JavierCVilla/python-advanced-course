@@ -12,24 +12,28 @@ w.pack()
 x,y = w.winfo_height() / 2, w.winfo_width() / 2
 vx, vy = 80.0, 150.0
 
-particle = w.create_oval(x,y, 60,60, outline='yellow')
+# Particle size
+particle_height = 60
+particle_width = 60
+particle = w.create_oval(x,y, particle_height, particle_width, outline='yellow')
 
 def update(dt):
     global x,y, vx, vy
+    global particle_width, particle_height
     oldx, oldy = x,y
     x += vx*dt
     y += vy*dt
 
-    if x + 60 > w.winfo_width():
-        x = w.winfo_width() - 60
+    if x + particle_width > w.winfo_width():
+        x = w.winfo_width() - particle_width
         vx = - vx
 
     if x < 0:
         x = 0
         vx = - vx
 
-    if y + 60 > w.winfo_height():
-        y = w.winfo_height() - 60
+    if y + particle_height > w.winfo_height():
+        y = w.winfo_height() - particle_height
         vy = - vy
 
     if y < 0:
