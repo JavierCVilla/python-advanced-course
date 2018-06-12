@@ -19,7 +19,6 @@ particle = w.create_oval(x,y, particle_height, particle_width, outline='yellow')
 
 def update(dt):
     global x,y, vx, vy
-    global particle_width, particle_height
     oldx, oldy = x,y
     x += vx*dt
     y += vy*dt
