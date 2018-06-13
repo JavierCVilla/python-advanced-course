@@ -13,16 +13,13 @@ class Particle:
 
     def bounce(self, limits):
         xmin, xmax, ymin, ymax = limits
+
+        # right
         if self.x + self.r > xmax:
             self.x = xmax - self.r - (self.x - xmax + self.r)
             self.vx = - self.vx
 
-        # left far (completely out)
-        if self.x + self.r < xmin:
-            self.x = xmin + self.r + (xmin - self.x + self.r)
-            self.vx = - self.vx
-
-        # left near
+        # left
         if self.x - self.r < xmin:
             self.x += (xmin - (self.x - self.r))*2
             self.vx = - self.vx
