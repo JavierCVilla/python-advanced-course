@@ -1,3 +1,5 @@
+from Display import Display
+
 class Particle:
 
     def __init__(self, r, pos, velocity):
@@ -34,3 +36,6 @@ class Particle:
         if self.y - self.r < ymin:
             self.y += (ymin - (self.y - self.r))*2
             self.vy = - self.vy
+
+    def draw(self, display):
+        display.draw_circle(self.x, self.y, self.r)
