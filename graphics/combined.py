@@ -1,6 +1,6 @@
-implemetation = raw_input("Choose an implementation tkinter [tk] or pyglet [pyg]: ")
+from sys import argv
 
-if "tk" in implemetation:
+if "tk" in argv:
     try:
         # for Python2
         import Tkinter as tk
