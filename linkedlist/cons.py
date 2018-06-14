@@ -1,20 +1,19 @@
 class Cons:
     def __init__(self, item, tail=None):
         self.item = item
-	self.tail = tail
+        self.tail = tail
+
 
     def __getitem__(self, pos):
-	if pos == 0:
-	    return self.item
+        if pos == 0:
+            return self.item
         try:
             return self.tail[pos-1]
         except TypeError:
             raise IndexError
 
     def __len__(self):
-	if self.tail is None:
-            return 1
-        return len(self.tail) + 1
+        return sum(1 for item in self)
 
         # Alternative implementation
         #count = 1
