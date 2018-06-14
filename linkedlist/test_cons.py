@@ -24,7 +24,7 @@ example = ('hello',
 def test_getitem_double(data):
     c = cons_from_sequence(data)
     for n, item in enumerate(data):
-	assert c[n] == item
+        assert c[n] == item
 
 @parametrize('data', example)
 def test_len(data):
