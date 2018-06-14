@@ -119,4 +119,3 @@ def test_Vector_in_place_division_by_scalar_should_work(x,y,s):
 @given(FLOATS, FLOATS)
 def test_Vector_magnitude_should_work(x,y):
     assert abs(Vector(x,y)) == sqrt(x*x + y*y)
-    
